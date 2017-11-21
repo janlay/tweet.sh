@@ -481,6 +481,7 @@ fetch() {
   local id="$(echo "$target" | extract_tweet_id)"
   local params="$(cat << FIN
 id $id
+tweet_mode extended
 FIN
   )"
   local result="$(echo "$params" |
@@ -933,7 +934,7 @@ body() {
     local id="$(echo "$target" | extract_tweet_id)"
     fetch "$id" | body
   else
-    jq -r .text | unicode_unescape
+    jq -r .full_text | unicode_unescape
   fi
 }
 
