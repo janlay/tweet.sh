@@ -1006,6 +1006,7 @@ post() {
 
   local params="$(cat << FIN
 status $*
+tweet_mode extended
 $media_params
 FIN
   )"
