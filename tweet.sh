@@ -1151,8 +1151,9 @@ unretweet() {
     return 1
   fi
 
-  local retweet_id="$(fetch_with_my_retweet "$id" | jq -r .current_user_retweet.id_str)"
-  delete "$retweet_id"
+  local result="$(call_api POST "https://api.twitter.com/1.1/statuses/unretweet/$id.json")"
+  echo "$result"
+  check_errors "$result"
 }
 
 follow() {
