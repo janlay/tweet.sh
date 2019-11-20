@@ -33,7 +33,7 @@
 # If you hope to see detailed logs, set an environment variable "DEBUG" to 1 or something.
 
 work_dir="$(pwd)"
-tools_dir="$(cd "$(dirname "$0")" && pwd)"
+tools_dir="$(cd "$(dirname "$0")" && pwd && cd -)"
 
 tmp="/tmp/$$"
 
